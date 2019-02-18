@@ -9,7 +9,7 @@ basic() {
 build_on_commit() {
   echo "This should build on commit"
   echo "Hello World"
-  echo "Hope this fixes"
+  echo "Hope this fixes the broken build"
 }
 
 main() {
