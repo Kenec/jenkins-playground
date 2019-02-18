@@ -8,6 +8,7 @@ basic() {
 
 build_on_commit() {
   echo "This should build on commit"
+  echo "Hello World"
 }
 
 main() {
