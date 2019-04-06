@@ -1,9 +1,24 @@
 pipeline {
-  agent { docker { image 'node:6.3' } }
+  agent any
   stages {
-    stage('build') {
+    stage('Frontend') {
       steps {
-        sh 'npm version'
+        sh 'mkdir -p demo/frontend demo/backend'
+        dir('demo') {
+          dir('frontend') {
+            git(url: 'https://github.com/Kenec/Grocerrific-Pluralsight.git', branch: '')
+          }
+        }
+      }
+    }
+    stage('Backend') {
+      steps {
+        dir('demo') {
+          dir('backend') {
+            git(url: 'https://github.com/Kenec/git-cheat-sheet.git', branch: '')
+          }
+        }
+        sh 'echo "GREAT SUCCESS"'
       }
     }
   }
