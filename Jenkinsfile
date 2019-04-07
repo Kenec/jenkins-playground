@@ -6,7 +6,7 @@ pipeline {
         sh 'mkdir -p demo/frontend demo/backend'
         dir('demo') {
           dir('frontend') {
-            git(url: 'https://github.com/Kenec/Grocerrific-Pluralsight.git', branch: 'master')
+            git(url: 'https://github.com/Kenec/Grocerrific-Pluralsight.git', branch: '*')
           }
         }
       }
@@ -15,7 +15,7 @@ pipeline {
       steps {
         dir('demo') {
           dir('backend') {
-            git(url: 'https://github.com/Kenec/git-cheat-sheet.git', branch: 'master')
+            git(url: 'https://github.com/Kenec/git-cheat-sheet.git', branch: '*')
           }
         }
         sh 'echo "GREAT SUCCESS"'
