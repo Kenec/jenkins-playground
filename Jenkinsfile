@@ -8,6 +8,7 @@ pipeline {
         dir('demo') {
           dir('frontend') {
             git(url: 'https://github.com/Kenec/Grocerrific-Pluralsight.git', branch: 'master')
+            sh 'rm -rf package-lock.json'
             sh 'npm install'
             sh 'npm run test:client'
           }
@@ -19,6 +20,7 @@ pipeline {
         dir('demo') {
           dir('backend') {
             git(url: 'https://github.com/Kenec/git-cheat-sheet.git', branch: 'master')
+            sh 'rm -rf package-lock.json'
             sh 'npm install'
             sh 'npm run test:client'
           }
